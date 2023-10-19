@@ -1,0 +1,27 @@
+﻿@model AlbumViewModel
+
+<h1>Album Details</h1>
+
+<div>
+<h2>@Model.Album.Title</h2>
+<p>Artist: @Model.Album.Artist</p>
+<p>Release Year: @Model.Album.ReleaseDate</p>
+
+@if (Model.IsModernAlbum())
+{
+<p>This album is recent.</p>
+}
+else
+{
+<p>This album is not recent.</p>
+}
+
+<h3>@Model.RelatedAlbumsCount Related Albums</h3>
+<ul>
+@foreach (var relatedAlbum in Model.RelatedAlbums)
+{
+<li>@relatedAlbum.Title (Released in @relatedAlbum.ReleaseDate)</li>
+}
+</ul>
+
+</div>
