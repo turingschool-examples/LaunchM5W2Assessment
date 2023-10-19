@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using RecordCollection.DataAccess;
@@ -11,9 +12,11 @@ using RecordCollection.DataAccess;
 namespace RecordCollection.Migrations
 {
     [DbContext(typeof(RecordCollectionContext))]
-    partial class RecordCollectionContextModelSnapshot : ModelSnapshot
+    [Migration("20230921151120_seedData")]
+    partial class seedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,20 +102,6 @@ namespace RecordCollection.Migrations
                             Artist = "Led Zeppelin",
                             ReleaseDate = new DateTime(1969, 10, 22, 0, 0, 0, 0, DateTimeKind.Utc),
                             Title = "Led Zeppelin II"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Artist = "Billie Eilish",
-                            ReleaseDate = new DateTime(2019, 3, 29, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Title = "When We All Fall Asleep, Where Do We Go?"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Artist = "Lake Street Dive",
-                            ReleaseDate = new DateTime(2021, 3, 12, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Title = "Obviously"
                         });
                 });
 #pragma warning restore 612, 618
