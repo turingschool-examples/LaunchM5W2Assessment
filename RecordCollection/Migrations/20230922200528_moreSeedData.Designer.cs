@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using RecordCollection.DataAccess;
@@ -11,9 +12,11 @@ using RecordCollection.DataAccess;
 namespace RecordCollection.Migrations
 {
     [DbContext(typeof(RecordCollectionContext))]
-    partial class RecordCollectionContextModelSnapshot : ModelSnapshot
+    [Migration("20230922200528_moreSeedData")]
+    partial class moreSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
